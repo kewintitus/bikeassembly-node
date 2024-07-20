@@ -3,6 +3,7 @@ const cors = require('cors');
 const viewRouter = require('./routes/viewRoute');
 const authRouter = require('./routes/authRoute');
 const bikeTypeRouter = require('./routes/bikeTypeRoute');
+const bikeRecordRouter = require('./routes/bikeRecordRoute');
 const express = require('express');
 
 const app = express();
@@ -19,6 +20,7 @@ app.use(express.json({ limit: '10kb' }));
 app.use('/api/v1/', viewRouter);
 app.use('/api/v1/', authRouter);
 app.use('/api/v1/', bikeTypeRouter);
+app.use('/api/v1/', bikeRecordRouter);
 
 app.all('*', (req, res, next) => {
   res.status(404).json({
