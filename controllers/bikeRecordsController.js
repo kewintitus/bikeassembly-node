@@ -528,6 +528,6 @@ exports.isAdmin = (req, res, next) => {
   if (userData?.role !== 'admin') {
     return res.status(401).json({ message: 'Access Denied!!' });
   }
-  console.log('Hello from middleware', userData);
+  //   console.log('Hello from middleware', userData);
   next();
 };
