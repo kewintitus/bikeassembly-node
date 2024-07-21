@@ -58,8 +58,11 @@ exports.login = async (req, res, next) => {
 exports.logout = async (req, res, next) => {
   try {
     res.cookie('jwt', 'loggedOut', {
-      expires: new Date(Date.now() + 10 * 1000),
+      expires: new Date(Date.now() * 1000),
       httpOnly: true,
+      sameSite: 'strict',
+      userCredentials: true,
+      secure: false,
     });
     console.log('logout success');
     res.status(200).json({

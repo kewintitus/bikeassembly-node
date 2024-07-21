@@ -10,11 +10,11 @@ const bikeRecordSchema = new mongoose.Schema({
     required: [true, 'Bike Name is required'],
   },
   startedAt: {
-    type: Date,
+    type: String,
     required: [true, 'starting time is required'],
   },
   endsAt: {
-    type: Date,
+    type: String,
     required: [true, 'ending time is required'],
   },
   duration: {
@@ -26,7 +26,7 @@ const bikeRecordSchema = new mongoose.Schema({
     default: false,
   },
   timeElapsedBeforeCancel: {
-    type: Number,
+    type: String,
   },
   username: {
     type: String,
