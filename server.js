@@ -11,8 +11,7 @@ process.on('uncaughtException', (err) => {
   process.exit(1);
 });
 
-const connectionString =
-  'mongodb+srv://kewintitus:9UJbHVcxSGxm6RiX@cluster0.q82uepz.mongodb.net/manufacturing';
+const connectionString = `mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@cluster0.q82uepz.mongodb.net/manufacturing`;
 
 const port = process.env.PORT || 3000;
 const server = app.listen(port, () => {
